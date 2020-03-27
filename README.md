@@ -1,5 +1,5 @@
-### COVID 19 API
+# COVID 19 API
 
 > This api is made by scrapping worldometers website
 
-`http://localhost:4000`
+[https://covid19-restapi.herokuapp.com/](https://covid19-restapi.herokuapp.com/)
