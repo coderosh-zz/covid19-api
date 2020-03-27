@@ -33,11 +33,9 @@ router.get('/', async (req, res) => {
 
     return res.status(200).json(tojson)
   } catch (e) {
-    return res.status(500).json([
-      {
-        error: 'Please try again, something wrong happened'
-      }
-    ])
+    return res.status(500).json({
+      error: 'Something wrong happened, please try again'
+    })
   }
 })
 
