@@ -21,8 +21,8 @@ router.get('/', async (req, res) => {
       'Total Recovered',
       'Active Cases',
       'Serious/Critical',
-      'Tot Cases / 1M pop',
-      'Tot Deaths / 1M pop'
+      'casesPerMillion',
+      'deathsPerMillion'
     ]
 
     const tojson = convertHtmlToJson(
@@ -30,6 +30,8 @@ router.get('/', async (req, res) => {
       '#main_table_countries_today td',
       header
     )
+
+    tojson.pop()
 
     return res.status(200).json(tojson)
   } catch (e) {

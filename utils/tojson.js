@@ -5,9 +5,19 @@ const convertHtmlToJson = ($, tdSelector, header) => {
     j = 0
 
   $(tdSelector).each((_, el) => {
-    d[`${header[j]}`] = $(el)
+    let val = $(el)
       .text()
       .trim()
+
+    if (!isNaN(parseFloat(val))) {
+      val = parseFloat(val)
+    }
+
+    if (val == '') {
+      val = 0
+    }
+
+    d[`${header[j]}`] = val
 
     if (j == header.length - 1) {
       body.push(d)
