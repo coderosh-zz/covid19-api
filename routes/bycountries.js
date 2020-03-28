@@ -26,11 +26,7 @@ router.get('/', async (req, res) => {
       '1st Case'
     ]
 
-    const tojson = convertHtmlToJson(
-      $,
-      '#main_table_countries_today td',
-      header
-    )
+    const tojson = convertHtmlToJson($, '#main_table_countries_today', header)
 
     tojson.pop()
 
