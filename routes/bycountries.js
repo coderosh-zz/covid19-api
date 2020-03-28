@@ -22,7 +22,8 @@ router.get('/', async (req, res) => {
       'Active Cases',
       'Serious/Critical',
       'casesPerMillion',
-      'deathsPerMillion'
+      'deathsPerMillion',
+      '1st Case'
     ]
 
     const tojson = convertHtmlToJson(
