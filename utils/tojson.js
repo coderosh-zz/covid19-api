@@ -30,7 +30,7 @@ const convertHtmlToJson = ($, tableSelector, _header) => {
       .trim()
 
     if (!isNaN(parseFloat(val))) {
-      val = parseFloat(val)
+      val = parseFloat(val.replace(',', ''))
     }
 
     if (val == '') {
