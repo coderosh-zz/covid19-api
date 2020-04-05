@@ -5,11 +5,7 @@ const convertHtmlToJson = ($, tableSelector, _header) => {
   let header = []
 
   $(`${tableSelector} th`).each((_, el) => {
-    header.push(
-      $(el)
-        .text()
-        .trim()
-    )
+    header.push($(el).text().trim())
   })
 
   // if (_header.length !== header.length) {
@@ -25,12 +21,10 @@ const convertHtmlToJson = ($, tableSelector, _header) => {
     j = 0
 
   $(`${tableSelector} td`).each((_, el) => {
-    let val = $(el)
-      .text()
-      .trim()
+    let val = $(el).text().trim()
 
     if (!isNaN(parseFloat(val))) {
-      val = parseFloat(val.replace(',', ''))
+      val = parseFloat(val.replace(/,/g, ''))
     }
 
     if (val == '') {
