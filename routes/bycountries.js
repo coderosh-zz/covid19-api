@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
     const $ = cheerio.load(data)
 
     const header = [
+      '#',
       'Country',
       'Total Cases',
       'New Cases',
@@ -23,7 +24,7 @@ router.get('/', async (req, res) => {
       'Serious/Critical',
       'casesPerMillion',
       'deathsPerMillion',
-      '1st Case'
+      '1st Case',
     ]
 
     const tojson = convertHtmlToJson($, '#main_table_countries_today', header)
@@ -33,7 +34,7 @@ router.get('/', async (req, res) => {
     return res.status(200).json(tojson)
   } catch (e) {
     return res.status(500).json({
-      error: 'Something wrong happened, please try again'
+      error: 'Something wrong happened, please try again',
     })
   }
 })
